@@ -1,18 +1,18 @@
 #include <stdio.h>
 
 /**
- * main - main entry point
- * Return: returns 0 if all checks are okay
+* main - Entry point
+*
+* Return: returns 0 when everything works fine
+*
 */
 
 int main(void)
 {
-char letter = 'a';
-while (letter <= 'z')
-{
-putchar(letter);
-letter++;
-}
-putchar("/n");
-return (0);
+	int n;
+
+	for (n = 97; n <= 122; ++n)
+		putchar(n);
+	putchar(10);
+	return (0);
 }
