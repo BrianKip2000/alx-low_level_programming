@@ -3,33 +3,34 @@
 /**
  * times_table - prints the 9 times table, starting with 0
  */
-void time_table(void)
+void times_table(void)
 {
-int i, j, k;
-for (i = 0; i < 10; i++)
-{
-for (j = 0; j < 10; j++)
-{
-k = j * i;
-if (j == 0)
-{
-_putchar(k + '0');
-}
-if (k < 10 && j != 0)
-{
-_putchar(',');
-_putchar(' ');
-_putchar(' ');
-_putchar(k + '0');
-}
-else if (k >= 10)
-{
-_putchar(',');
-_putchar(' ');
-_putchar((k / 10) + '0');
-_putchar((k % 10) + '0');
-}
-}
-_putchar('\n');
-}
+	int base, mult, n, decena, unidad;
+
+	for (base = 0; base < 10; base++)
+	{
+		for (mult = 0; mult < 10; mult++)
+		{
+			n = base * mult;
+			if (n < 10 && mult != 0)
+			{
+				_putchar(' ');
+				_putchar(n + '0');
+			} else if (n < 10 && mult == 0)
+				_putchar(n + '0');
+			else
+			{
+				decena = (n / 10);
+				unidad = (n % 10);
+				_putchar(decena + '0');
+				_putchar(unidad + '0');
+			}
+			if (mult < 9)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+		}
+		_putchar('\n');
+	}
 }
