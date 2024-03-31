@@ -1,36 +1,46 @@
 #include "main.h"
 
 /**
- * times_table - prints the 9 times table, starting with 0
+ * _printstr - prints a given string
+ * @c: a null terminated character array
+ *
+ * Return: 0 if successful
+ */
+int _printstr(char c[])
+{
+	int i = 0;
+
+	while (c[i] != '\0')
+		_putchar(c[i++]);
+
+	return (0);
+}
+
+/**
+ * times_table - prints out a multiplication table for between
+ * 0 and 9
+ *
+ * Return void
  */
 void times_table(void)
 {
-	int base, mult, n, decena, unidad;
+	char line[] = "0,  0,  0,  0,  0,  0,  0,  0,  0,  0\n";
+	int i;
 
-	for (base = 0; base < 10; base++)
+	while (line[3] == ' ')
 	{
-		for (mult = 0; mult < 10; mult++)
+		_printstr(line);
+		for (i = 0; i < 10; i++)
 		{
-			n = base * mult;
-			if (n < 10 && mult != 0)
+			line[i * 4] = line[i * 4] + i;
+			if (line[i * 4] > '9')
 			{
-				_putchar(' ');
-				_putchar(n + '0');
-			} else if (n < 10 && mult == 0)
-				_putchar(n + '0');
-			else
-			{
-				decena = (n / 10);
-				unidad = (n % 10);
-				_putchar(decena + '0');
-				_putchar(unidad + '0');
-			}
-			if (mult < 9)
-			{
-				_putchar(',');
-				_putchar(' ');
+				line[i * 4] -= 10;
+				if (line[i * 4 - 1] == ' ')
+					line[i * 4 - 1] = '1';
+				else
+					line[i * 4 - 1]++;
 			}
 		}
-		_putchar('\n');
 	}
 }
