@@ -13,6 +13,6 @@ for (i = 0; i < 10; i++)
 {
 printf("%d", i);/* prints output of for ftn */
 }
-putchar(10)
+putchar(10);
 return (0);
 }
