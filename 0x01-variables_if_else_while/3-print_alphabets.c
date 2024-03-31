@@ -17,5 +17,6 @@ for (n = 65; n <= 90; n++)
 {
 putchar(n);
 }
-printf(n);
+putchar(10);
+return (0);
 }
