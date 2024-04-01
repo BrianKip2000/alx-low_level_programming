@@ -4,7 +4,8 @@
 #include <stdio.h>
 
 /**
- * define main header file
+ * void- returns nothing
+ * @i: The integer to be evaluated.
 */
 
 void positive_or_negative(int i);
