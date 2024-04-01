@@ -1,12 +1,14 @@
 #include "main.h"
 
 /**
- * 
+ * _isdigit- main entry point
+ * @c: integer iterated
+ * Return: 0 or 1 if code is okay
 */
 
 int _isdigit(int c)
 {
-if (c >= 0 && c < 10)
+if (c >= 48 && c < 58)
 {
 return (1);
 }
