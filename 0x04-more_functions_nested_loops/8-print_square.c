@@ -13,7 +13,7 @@ int x;
 for (i = 0; i < size; i++)
 
 {
-for (x = 0; x < i; x++)
+for (x = 0; x < size; x++)
 {
 _putchar('#');
 }
