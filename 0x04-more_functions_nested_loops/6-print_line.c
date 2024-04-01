@@ -7,11 +7,11 @@
 
 void print_line(int n)
 {
-int m;
+int i;
 
-for (m = 0; m < n; m++)
+for (i = 0; i < n; i++)
 {
-_putchar("_");
+_putchar('_');
 }
 
 _putchar('\n');
