@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+/**
+ * main- main entry point
+ * Return: 0
+*/
 int main(void)
 {
 int i;
