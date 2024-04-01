@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -6,6 +6,7 @@
  *
  * Return: Void.
  */
+
 void more_numbers(void)
 {
 	int i;
