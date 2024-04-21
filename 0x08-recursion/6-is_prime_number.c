@@ -24,6 +24,6 @@ if (n % 2 == 0)
 return (0);
 }
 
-i++;
+n++;
 return (is_prime_number(n));
 }
