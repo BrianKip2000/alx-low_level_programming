@@ -1,27 +1,53 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-/**
- * rot13 - encodes a string in rot13
- * @s: string to be encoded
- * Return: the resulting strring
- */
-char *rot13(char *s)
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i, j;
+    int carry = 0;
+    int sum;
+    int len1 = strlen(n1);
+    int len2 = strlen(n2);
+    int i = len1 - 1;
+    int j = len2 - 1;
+    int k = 0;
 
-	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+    // Start adding digits from the rightmost digit
+    while (i >= 0 || j >= 0 || carry) {
+        // Calculate the sum of digits
+        sum = carry;
+        if (i >= 0) {
+            sum += n1[i] - '0';
+            i--;
+        }
+        if (j >= 0) {
+            sum += n2[j] - '0';
+            j--;
+        }
+        // Check if there is overflow
+        if (k >= size_r - 1) {
+            return 0; // Buffer overflow, return 0
+        }
+        // Store the result digit in the result buffer
+        r[k] = (sum % 10) + '0';
+        k++;
+        carry = sum / 10;
+    }
+    
+    // Null terminate the result string
+    r[k] = '\0';
 
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		for (j = 0; a[j] != '\0'; j++)
-		{
-			if (s[i] == a[j])
-			{
-				s[i] = b[j];
-				break;
-			}
-	    }
-	}
-	return (s);
+    // Reverse the result string
+    int left = 0;
+    int right = k - 1;
+    while (left < right) {
+        char temp = r[left];
+        r[left] = r[right];
+        r[right] = temp;
+        left++;
+        right--;
+    }
+
+    return r;
 }
