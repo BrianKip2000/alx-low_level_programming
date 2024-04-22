@@ -13,5 +13,6 @@ int helper_prime(int n, int i, int limit);
 int is_palindrome(char *s);
 int palind2(char *a, int l);
 int palind3(char *a, int l);
+int wildcmp(char *s1, char *s2);
 
 #endif
