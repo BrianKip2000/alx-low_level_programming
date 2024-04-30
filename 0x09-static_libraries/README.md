@@ -1,0 +1,1 @@
+Static Library assignment for ALX
