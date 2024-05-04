@@ -1,29 +1,25 @@
-#include <stdio.h>
+
+#include <stdio.h> 
 #include <stdlib.h>
 
+int main(int argc, char *argv[]) {
 
-/**
- *main - checks code if its working
- *@argc: counter
- *@argv: 1-D vector
- *Return: 0 for success 1 for fail
- */
-int main(int argc, char *argv[])
-{
-int i, prod = 1;
-if (argc > 1)
-{
-for (i = 1; i < argc; i++)
-{
-prod *= atoi(argv[i]);
-}
-printf("%d\n", prod);
-}
-else if (argc <= 1)
-{
-printf("Error\n");
-return (1);
-}
+  if (argc != 3) {
+    printf("Error\n");
+    return 1;
+  }
 
-return (0);
+  int num1 = atoi(argv[1]);
+  int num2 = atoi(argv[2]);
+
+  if((num1 == 0 && argv[1][0] != '0') || (num2 == 0 && argv[2][0] != '0')) {
+    printf("Error\n");
+    return 1;
+  }
+
+  int prod = num1 * num2;
+
+  printf("%d\n", prod);
+
+  return 0;
 }
