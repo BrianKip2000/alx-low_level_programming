@@ -1,24 +1,24 @@
 #include <stdio.h>
-
 /**
- * main - entry point
+ * main - Entry Point, prints out switched numbers, except for similar ones
  *
- * Return: always 0
+ * Return: Always 0(sucess)
  */
 int main(void)
 {
-	int c, c_two;
+	int a;
+	int b;
 
-	for (c = 48; c <= 56; c++)
+	for (a = 48; a <= 56; a++)
 	{
-		for (c_two = c + 1; c_two <= 57; c_two++)
+		for (b = a + 1; b <= 57; b++)
 		{
-			putchar(c);
-			putchar(c_two);
-			if (c != 56 || c_two != 57)
+			putchar(a);
+			putchar(b);
+			if (a != 56 || b != 57)
 			{
-				putchar(44);
-				putchar(32);
+				putchar(a);
+				putchar(b);
 			}
 		}
 	}
