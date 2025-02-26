@@ -1,19 +1,18 @@
 #include "main.h"
-
 /**
- * print_alphabet - check the code for ALX School students.
+ * print_alphabet - Prints alphabets from a to z
  *
- * Return: Always 0.
+ * Return: 0 for success
  */
-
 void print_alphabet(void)
 {
-	char x;
+	int a = 97;
 
-	for (x = 'a'; x <= 'z'; x++)
+	while (a <= 122)
 	{
-		_putchar(x);
+		_putchar(a);
+		a++;
 	}
-	_putchar('\n');
-
+	_putchar(10);
 }
+
