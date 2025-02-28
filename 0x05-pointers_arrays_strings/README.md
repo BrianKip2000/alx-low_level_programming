@@ -1,1 +1,2 @@
-# Pointers, Arrays and Strings in C
+README file for pointers
+We used & and * for dereferencing
